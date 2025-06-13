@@ -68,7 +68,7 @@ y_pred = knn.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 ```
      
-## K-Nearest Neighbors algorithm**    
+## K-Nearest Neighbors algorithm    
 - Euclidean distance
 - after sorted we Get indices of k closest points
 - Get their labels
