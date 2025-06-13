@@ -38,7 +38,7 @@ print("Extracted Hu Moments shape:", X_hu.shape)
 print("Extracted Hu Moments shape:", X_hu)
 ```
 <p align="center">
-      <img src="media/1.png" width="30%" />
+      <img src="media/11.png" width="30%" />
 </p>   
   
 ## Step 4: Split the Dataset:    
@@ -49,7 +49,7 @@ print("Training set shape:", X_train.shape)
 print("Test set shape:", X_test.shape)
 ```
 <p align="center">
-      <img src="media/1.png" width="30%" />
+      <img src="media/3.png" width="30%" />
 </p>    
    
 ## Step 5: Train the KNN Classifier (k = 5):    
@@ -68,7 +68,7 @@ y_pred = knn.predict(X_test)
 accuracy = accuracy_score(y_test, y_pred)
 ```
      
-**K-Nearest Neighbors algorithm**    
+## K-Nearest Neighbors algorithm**    
 - Euclidean distance
 - after sorted we Get indices of k closest points
 - Get their labels
