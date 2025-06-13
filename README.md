@@ -10,14 +10,13 @@ import cv2
 from sklearn.datasets import fetch_openml
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsClassifier
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score     
+from tensorflow.keras.datasets import mnist   
 ```
 
 ##  Step 2: Load the MNIST Dataset    
 ```
-mnist = fetch_openml('mnist_784', version=1)
-X = mnist.data
-y = mnist.target.astype(np.int32)
+(X_train, y_train), (X_test, y_test) = mnist.load_data()
 ```
 ## Step 3: Feature Extraction Using Hu Moments  
 we Use a subset of the data for speed    
