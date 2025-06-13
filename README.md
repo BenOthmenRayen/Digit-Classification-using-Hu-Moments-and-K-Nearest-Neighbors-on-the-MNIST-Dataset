@@ -25,7 +25,7 @@ we Use a subset of the data for speed
 def extract_hu_moments(images):
     features = []
     for img in images:
-        image_2d = img.reshape(28, 28).astype(np.uint8)
+        image_2d = img.astype(np.uint8)
         moments = cv2.moments(image_2d)
         hu_moments = cv2.HuMoments(moments).flatten()
         features.append(hu_moments)
@@ -34,19 +34,33 @@ def extract_hu_moments(images):
 X_subset = X[:5000]
 y_subset = y[:5000]
 X_hu = extract_hu_moments(X_subset)
+print("Extracted Hu Moments shape:", X_hu.shape)
+print("Extracted Hu Moments shape:", X_hu)
 ```
-
+<p align="center">
+      <img src="media/1.png" width="30%" />
+</p>   
+  
 ## Step 4: Split the Dataset:    
 uses 20% (1000 samples) for testing, 80% (4000) for training.    
 ```
 X_train, X_test, y_train, y_test = train_test_split(X_hu, y_subset, test_size=0.2, random_state=42)
+print("Training set shape:", X_train.shape)
+print("Test set shape:", X_test.shape)
 ```
+<p align="center">
+      <img src="media/1.png" width="30%" />
+</p>    
+   
 ## Step 5: Train the KNN Classifier (k = 5):    
 K-Nearest Neighbors is a supervised machine learning algorithm that classifies a data point based on how its neighbors are classified. It finds the K closest points in the training data and assigns the most common class among them to the new point.     
 ```
 knn = KNeighborsClassifier(n_neighbors=5)
 knn.fit(X_train, y_train)
 ```
+<p align="center">
+      <img src="media/2.png" width="30%" />
+</p>      
 
 ## Step 6: Predict and Evaluate   
 ```
